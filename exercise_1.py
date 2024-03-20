@@ -1,17 +1,5 @@
-'''
-
-Imagina que trabajas para una empresa de comercio electrónico y te han proporcionado un conjunto 
-de datos en forma de diccionario que contiene información sobre las transacciones de los clientes. 
-Quieren que realices un análisis básico para comprender mejor el comportamiento de compra de los clientes.
-
-Problema: Utiliza Pandas para responder a las siguientes preguntas sobre las transacciones:
-
-¿Cuántas transacciones hay en total?
-¿Cuál es el monto total de todas las transacciones?
-¿Cuántos clientes únicos han realizado transacciones?
-
-
-'''
+import pandas as pd
+import numpy as np
 
 transacciones = [
     {"cliente": "Cliente1", "monto": 100, "fecha": "2024-03-01"},
@@ -26,5 +14,13 @@ transacciones = [
     {"cliente": "Cliente6", "monto": 200, "fecha": "2024-03-10"}
 ]
 
+df_transacciones = pd.DataFrame(transacciones)
 
+print(df_transacciones)
+#print(df_transacciones['monto'].describe())
 
+suma = sum(df_transacciones['monto'])
+print(suma)
+
+conjunto_transaccion = set(df_transacciones['cliente'])
+print(conjunto_transaccion)
